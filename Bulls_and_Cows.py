@@ -37,12 +37,16 @@ def main():
         cows = 0
         bulls = 0
         print('-----------------------------------------------')
-        guess_number = int(input('Enter a number: '))
-        if not not_duplicates(guess_number):
+        guess_number = input('Enter a number: ')
+        if not guess_number.isdigit():
+            print('-----------------------------------------------')
+            print('Only digits. Try again.')
+            continue
+        if not not_duplicates(int(guess_number)):
             print('-----------------------------------------------')
             print('No reapeted numbers. Try again.')
             continue
-        if guess_number < 1000 or guess_number > 9999:
+        if int(guess_number) < 1000 or int(guess_number) > 9999:
             print('-----------------------------------------------')
             print('Only 4 digits. Try again.')
             continue
